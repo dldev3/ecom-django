@@ -7,7 +7,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Django Ecommerce</title>
+
+  <title>E-COMMERCE - {% block head_title %}{% endblock %}</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -48,14 +49,13 @@
 </head>
 
 <body>
-
     <!-- Navbar -->
     {% include "nav.html" %}
     <!-- Navbar -->
 
     {% if messages %}
       {%  for message in messages %}
-      <div class="alert alert-{{ message.tags }} alert-dismissable fade show" role="alert" style="margin-top: 75px; padding: 25px;">
+      <div class="alert alert-{{ message.tags }} alert-dismissable fade show" role="alert" style="margin-top: 30px; padding: 20px;">
         {{ message }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -64,12 +64,9 @@
       {% endfor %}
     {% endif %}
 
-
-
-
-
     {% block content  %}
     {% endblock content %}
+
 
     <!-- footer-->
     {% include "footer.html" %}
@@ -91,6 +88,7 @@
       new WOW().init();
 
     </script>
-  </body>
 
+<!-- flex-wrapper end -->
+  </body>
   </html>

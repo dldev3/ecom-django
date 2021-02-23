@@ -19,7 +19,13 @@ def checkout(request):
 
 class HomeView(ListView):
     model = Item
+    paginate_by = 10
     template_name = "home.html"
+
+# class OrderSummary(DetailView):
+#     model = Order
+#     template_name = 'order_summary.html'
+
 
 class ItemDetailView(DetailView):
     model = Item
