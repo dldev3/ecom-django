@@ -292,7 +292,3 @@ class  AddCouponView(View):
                 messages.info(self.request, "You do not have an active order")
                 return redirect("core:checkout")
 
-
-
-def Nothing():
-    pass
