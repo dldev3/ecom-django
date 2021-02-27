@@ -1,4 +1,5 @@
 from django import forms
+from django.db.models.fields import CharField
 from django.forms.widgets import TextInput
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
@@ -36,3 +37,10 @@ class CouponForm(forms.Form):
         'aria-label':'Recipient\'s username',
         'aria-describedby':'basic-addon2'
     }))
+    
+class RefundForm(forms.Form):
+    ref_code = forms.CharField()
+    message = forms.CharField(widget=forms.Textarea(attrs= {
+        'rows': 4
+    }))
+    email = forms.EmailField()
